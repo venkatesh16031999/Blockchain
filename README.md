@@ -11,6 +11,11 @@ All the security best practises may or may not be followed due to time constrain
 
 Decentralized Exchange Contract - [Click Here](https://github.com/venkatesh16031999/DEX-Contract-Eth-Scafold-2/tree/defi/dex-smart-contract)
 
+### Upgradable Contracts:
+
+Basic Diamond Proxy Contract (EIP-2535) - [Click Here](https://github.com/venkatesh16031999/Blockchain/tree/upgradable/diamond-proxy-contract) 
+
+
 ### Low level EVM
 
 Assembly -
