@@ -1,4 +1,4 @@
-# 🏗 Scaffold-ETH 2
+# 🏗 Scaffold-ETH 2 powered smart contract portfolio
 
 This repository contains all the implementation contracts of various use cases that I have built or experimented with. Navigate to the different branches to check the contract implementation and play with the contracts using Scaffold Eth UI
 
