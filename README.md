@@ -7,15 +7,19 @@ All the security best practises may or may not be followed due to time constrain
 
 ### (In progress - Many smart contracts are yet to be added soon)
 
-### DeFi
+### DeFi:
 
 Decentralized Exchange Contract - [Click Here](https://github.com/venkatesh16031999/DEX-Contract-Eth-Scafold-2/tree/defi/dex-smart-contract)
+
+### Governance:
+
+DAO/Governance contract - [Click Here](https://github.com/venkatesh16031999/Blockchain/tree/governance/DAO)
 
 ### Upgradable Contracts:
 
 Basic Diamond Proxy Contract (EIP-2535) - [Click Here](https://github.com/venkatesh16031999/Blockchain/tree/upgradable/diamond-proxy-contract) 
 
-### Low level EVM
+### Low level EVM:
 
 Assembly (Using YUL) - [Click Here](https://github.com/venkatesh16031999/Blockchain/tree/EVM/Assembly)
 
