@@ -1958,6 +1958,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@solidstate/contracts@npm:^0.0.57":
+  version: 0.0.57
+  resolution: "@solidstate/contracts@npm:0.0.57"
+  checksum: 267aa0202bb57b3c96c038ecf519dba412be739a4e9e51491b15fe5c9e1f69dce11f84a418886f1fddfabbc3182e13c48a4f175914f279bed5ccccfb748d9af7
+  languageName: node
+  linkType: hard
+
 "@stablelib/aead@npm:^1.0.1":
   version: 1.0.1
   resolution: "@stablelib/aead@npm:1.0.1"
@@ -11719,6 +11726,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "se-2@workspace:."
   dependencies:
+    "@solidstate/contracts": ^0.0.57
     husky: ^8.0.1
     lint-staged: ^13.0.3
   languageName: unknown
