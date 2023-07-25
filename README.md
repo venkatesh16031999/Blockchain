@@ -3,13 +3,13 @@
 This repository contains all the implementation contracts of various use cases that I have built or experimented with. Navigate to the different branches to check the contract implementation and play with the contracts using Scaffold Eth UI
 
 Note: All the contracts implemented here are only for learning purposes and might not be production ready.
-All the security best practises may or may not be followed due to time constraints.
+All the security best practices may or may not be followed due to time constraints.
 
 ### (In progress - Many smart contracts are yet to be added soon)
 
 ### DeFi:
 
-Decentralized Exchange Contract - [Click Here](https://github.com/venkatesh16031999/DEX-Contract-Eth-Scafold-2/tree/defi/dex-smart-contract)
+Simple Decentralized Exchange Contract - [Click Here](https://github.com/venkatesh16031999/DEX-Contract-Eth-Scafold-2/tree/defi/dex-smart-contract)
 
 ### Governance:
 
