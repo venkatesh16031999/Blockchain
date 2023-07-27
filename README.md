@@ -15,15 +15,6 @@ All the security best practices may or may not be followed due to time constrain
 
 1. DAO/Governance contract - [Click Here](https://github.com/venkatesh16031999/Blockchain/tree/governance/DAO)
 
-### Upgradable Contracts:
-
-1. Basic Diamond Proxy Contract (EIP-2535) - [Click Here](https://github.com/venkatesh16031999/Blockchain/tree/upgradable/diamond-proxy-contract) 
-2. Advanced Diamond Proxy Contracts - Check GameFi section -> Game Inventory Contract & NFT section -> Arcadians NFT Collection and Equippable Cosmetics and Gears Collection
-
-### Low level EVM:
-
-1. Assembly (Using YUL) - [Click Here](https://github.com/venkatesh16031999/Blockchain/tree/EVM/Assembly)
-
 ### GameFi
 
 1. Game Registry Contract - [Polygonscan](https://polygonscan.com/address/0xef404c4a2365831e97d1a545678d069d4d2e5220)
@@ -35,6 +26,15 @@ All the security best practices may or may not be followed due to time constrain
 1. Arcadians NFT Collection (ERC721) - [Louper.dev](https://louper.dev/diamond/0x40678c11AB8E35Af60C2B597F80157a61dFCa38B?network=polygon)
 2. Equippable Cosmetics and Gears Collection (ERC1155) - [Louper.dev](https://louper.dev/diamond/0x12379B557eB3D05f2c453817C5e53290fc65Ce6e?network=polygon)
 3. CryptoChillouts NFT collection (ERC721) - [Polygonscan](https://polygonscan.com/token/0xa200a54daed579fda6f5ed86de93047bd9d595d7)
+
+### Upgradable Contracts:
+
+1. Basic Diamond Proxy Contract (EIP-2535) - [Click Here](https://github.com/venkatesh16031999/Blockchain/tree/upgradable/diamond-proxy-contract) 
+2. Advanced Diamond Proxy Contracts - Check GameFi section -> Game Inventory Contract & NFT section -> Arcadians NFT Collection and Equippable Cosmetics and Gears Collection
+
+### Low level EVM:
+
+1. Assembly (Using YUL) - [Click Here](https://github.com/venkatesh16031999/Blockchain/tree/EVM/Assembly)
 
 ## Requirements to play with the contracts
 
