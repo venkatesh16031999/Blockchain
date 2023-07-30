@@ -10,6 +10,7 @@ All the security best practices may or may not be followed due to time constrain
 ### DeFi:
 
 1. Simple Decentralized Exchange Contract - [Click Here](https://github.com/venkatesh16031999/DEX-Contract-Eth-Scafold-2/tree/defi/dex-smart-contract)
+2. Perpetual Futures smart contract (USDT Market) - [Click Here](https://github.com/venkatesh16031999/Blockchain/tree/defi/perpetual-contract)
 
 ### Governance:
 
