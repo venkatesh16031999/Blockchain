@@ -33,52 +33,96 @@ library Price {
 	}
 
 	function getPositionDelta(
-		PerpetualCore.Position calldata _postion,
+		address _collateralTokenAddress,
+		uint256 _leveragedPositionSize,
+		uint256 _previousCollateralTokenPrice,
+		bool _isLong,
 		address _perpetualConfiguratorAddress
 	) internal view returns (bool isProfit, uint256 delta) {
-		uint256 priceInUSD = getTokenPrice(
-			_postion.collateralTokenAddress,
+		uint256 _newCollateralTokenPrice = getTokenPrice(
+			_collateralTokenAddress,
 			_perpetualConfiguratorAddress
 		);
 
-		uint256 priceDifferenceInUSD = _postion.collateralTokenPriceInUSD >
-			priceInUSD
-			? _postion.collateralTokenPriceInUSD - priceInUSD
-			: priceInUSD - _postion.collateralTokenPriceInUSD;
+		uint256 _collateralPriceDifference = _previousCollateralTokenPrice >
+			_newCollateralTokenPrice
+			? _previousCollateralTokenPrice - _newCollateralTokenPrice
+			: _newCollateralTokenPrice - _previousCollateralTokenPrice;
 
-		delta =
-			(_postion.positionSizeInUSD * priceDifferenceInUSD) /
-			_postion.collateralTokenPriceInUSD;
+		delta = Math.mulDiv(
+			_leveragedPositionSize,
+			_collateralPriceDifference,
+			_previousCollateralTokenPrice
+		);
 
-		if (_postion.isLong) {
-			isProfit = _postion.collateralTokenPriceInUSD > priceInUSD;
+		if (_isLong) {
+			isProfit = _newCollateralTokenPrice > _previousCollateralTokenPrice;
 		} else {
-			isProfit = _postion.collateralTokenPriceInUSD < priceInUSD;
+			isProfit = _previousCollateralTokenPrice > _newCollateralTokenPrice;
 		}
 	}
 
-	// TBD
-	function usdToToken(address _token, uint256 _amount)
-		internal
-		pure
-		returns (uint256 amount)
-	{
-		amount = _amount;
-
-		return amount;
-	}
-
-	function tokenToUsd(
-		address _token,
-		uint256 _size,
+	function getAveragePositionPrice(
+		address _collateralTokenAddress,
+		uint256 _newLeveragedPositionSize,
+		uint256 _newCollateralTokenPrice,
+		uint256 _previousLeveragedPositionSize,
+		uint256 _previousCollateralTokenPrice,
+		bool _isLong,
 		address _perpetualConfiguratorAddress
-	) internal view returns (uint256 collateralPrice, uint256 totalAmount) {
-		uint256 price = getTokenPrice(_token, _perpetualConfiguratorAddress);
-		uint256 decimals = IERC20Token(_token).decimals();
+	) internal view returns (uint256 averagePrice) {
+		(bool isProfit, uint256 delta) = getPositionDelta(
+			_collateralTokenAddress,
+			_previousLeveragedPositionSize,
+			_previousCollateralTokenPrice,
+			_isLong,
+			_perpetualConfiguratorAddress
+		);
 
-		totalAmount = Math.mulDiv(_size, price, 10**decimals);
-		collateralPrice = totalAmount / _size;
+		uint256 _leveragedPositionSize = _previousLeveragedPositionSize +
+			_newLeveragedPositionSize;
 
-		return (collateralPrice, totalAmount);
+		uint256 divisor;
+
+		if (_isLong) {
+			divisor = isProfit
+				? (_leveragedPositionSize + delta)
+				: (_leveragedPositionSize - delta);
+		} else {
+			divisor = isProfit
+				? (_leveragedPositionSize - delta)
+				: (_leveragedPositionSize + delta);
+		}
+
+		averagePrice = Math.mulDiv(
+			_leveragedPositionSize,
+			_newCollateralTokenPrice,
+			divisor
+		);
 	}
+
+	// // TBD
+	// function usdToToken(address _token, uint256 _amount)
+	// 	internal
+	// 	pure
+	// 	returns (uint256 amount)
+	// {
+	// 	amount = _amount;
+
+	// 	return amount;
+	// }
+
+	// function tokenToUsd(
+	// 	address _token,
+	// 	uint256 _size,
+	// 	address _perpetualConfiguratorAddress
+	// ) internal view returns (uint256 collateralPrice, uint256 totalAmount) {
+	// 	uint256 price = getTokenPrice(_token, _perpetualConfiguratorAddress);
+	// 	uint256 decimals = IERC20Token(_token).decimals();
+
+	// 	totalAmount = Math.mulDiv(_size, price, 10**decimals);
+	// 	collateralPrice = totalAmount / _size;
+
+	// 	return (collateralPrice, totalAmount);
+	// }
 }

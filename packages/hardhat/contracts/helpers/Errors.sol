@@ -8,5 +8,9 @@ contract Errors {
 	error UnsupportedMarket();
 	error InvalidPercentage();
 	error InvalidPositionSize();
-	error InvalidCollateralSize();
+	error InsufficientCollateralFunds();
+	error CollateralTokenTransferFailed();
+	error LiquidationFeeTokenTransferFailed();
+	error PositionCannotLiquidated();
+	error InsufficientFundsForFees();
 }

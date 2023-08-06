@@ -11,16 +11,16 @@ contract PerpetualConfigurator is Ownable, Errors {
 	mapping(address => address) public tokenPriceFeeds;
 	mapping(address => uint8) public marketLeverage;
 
-	IERC20Token public immutable baseMarketTokenAddress;
+	IERC20Token public immutable baseMarketToken;
 	uint16 public liquidationFee;
-	uint16 public liquidationFeeThreshold;
+	uint16 public liquidationThreshold;
 	uint16 public baseMarketFee;
 
 	constructor(address _baseMarketTokenAddress, uint16 _baseFee) {
 		Validation.checkForZeroAddress(_baseMarketTokenAddress);
 		Validation.checkFeePercentageValidity(_baseFee);
 
-		baseMarketTokenAddress = IERC20Token(_baseMarketTokenAddress);
+		baseMarketToken = IERC20Token(_baseMarketTokenAddress);
 		baseMarketFee = _baseFee;
 	}
 
@@ -53,6 +53,6 @@ contract PerpetualConfigurator is Ownable, Errors {
 		Validation.checkFeePercentageValidity(_thresoldPercentage);
 
 		liquidationFee = _feePercentage;
-		liquidationFeeThreshold = _thresoldPercentage;
+		liquidationThreshold = _thresoldPercentage;
 	}
 }
