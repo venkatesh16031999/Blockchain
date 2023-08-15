@@ -5,16 +5,22 @@ import "./helpers/Validation.sol";
 import "./helpers/Errors.sol";
 import "./interfaces/IERC20Token.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
 
-contract PerpetualConfigurator is Ownable, Errors {
+/// @title USDT Perpetual Configuration contract powered by governance
+/// @author Venkatesh Rajendran
+contract PerpetualConfigurator is Ownable, Errors, Pausable {
+	// Tracks the supported markets
 	mapping(address => bool) public isMarketSupported;
+	// token chainlink price feeds for the markets
 	mapping(address => address) public tokenPriceFeeds;
+	// Market maximum leverages
 	mapping(address => uint8) public marketLeverage;
 
 	IERC20Token public immutable baseMarketToken;
-	uint16 public liquidationFee;
-	uint16 public liquidationThreshold;
-	uint16 public baseMarketFee;
+	uint16 public liquidationFee; // Liquidation fee in percentage
+	uint16 public liquidationThreshold; // Liquidation thresold in percentage
+	uint16 public baseMarketFee; // base market fee in percentage
 
 	constructor(address _baseMarketTokenAddress, uint16 _baseFee) {
 		Validation.checkForZeroAddress(_baseMarketTokenAddress);
@@ -24,6 +30,8 @@ contract PerpetualConfigurator is Ownable, Errors {
 		baseMarketFee = _baseFee;
 	}
 
+	/// @notice Get the chainlink oracle price feed address
+	/// @param _token Market token address like ETH, UNI, MATIC, etc...
 	function getTokenPriceFeed(address _token)
 		public
 		view
@@ -36,6 +44,9 @@ contract PerpetualConfigurator is Ownable, Errors {
 		priceFeed = tokenPriceFeeds[_token];
 	}
 
+	/// @notice Add a market to the perpetual trading via governance
+	/// @param _token Market token address like ETH, UNI, MATIC, etc...
+	/// @param _priceFeed Chainlink orcale price feed address
 	function addMarket(address _token, address _priceFeed) external onlyOwner {
 		Validation.checkForZeroAddress(_priceFeed);
 		Validation.checkForZeroAddress(_token);
@@ -45,6 +56,9 @@ contract PerpetualConfigurator is Ownable, Errors {
 		marketLeverage[_token] = 20;
 	}
 
+	/// @notice Configure the liquidation thresold and fees for positions/markets
+	/// @param _feePercentage liquidation fee percentage
+	/// @param _thresoldPercentage liquidation thresold in percentage
 	function configureLiquidations(
 		uint16 _feePercentage,
 		uint16 _thresoldPercentage
@@ -54,5 +68,15 @@ contract PerpetualConfigurator is Ownable, Errors {
 
 		liquidationFee = _feePercentage;
 		liquidationThreshold = _thresoldPercentage;
+	}
+
+	/// @notice Function to pause the perpetual market
+	function pause() public onlyOwner {
+		_pause();
+	}
+
+	/// @notice Function to unpause the perpetual market
+	function unpause() public onlyOwner {
+		_unpause();
 	}
 }
