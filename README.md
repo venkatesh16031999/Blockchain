@@ -29,6 +29,11 @@ All the security best practices may or may not be followed due to time constrain
 2. Equippable Cosmetics and Gears Collection (ERC1155) - [Louper.dev](https://louper.dev/diamond/0x12379B557eB3D05f2c453817C5e53290fc65Ce6e?network=polygon)
 3. CryptoChillouts NFT collection (ERC721) - [Polygonscan](https://polygonscan.com/token/0xa200a54daed579fda6f5ed86de93047bd9d595d7)
 
+### Token Bound Account Use Cases (ERC6551): 
+
+1. Arcadians NFT Points with ERC6551 support - [Click Here](https://github.com/venkatesh16031999/Blockchain/tree/ERC6551/NFT-Experience-And-Reputation)
+2. Arcadian NFT Soul bound badges with ERC6551 support - [Click Here](https://github.com/venkatesh16031999/Blockchain/tree/ERC6551/NFT-Experience-And-Reputation)
+
 ### Upgradable Contracts:
 
 1. Basic Diamond Proxy Contract (EIP-2535) - [Click Here](https://github.com/venkatesh16031999/Blockchain/tree/upgradable/diamond-proxy-contract) 
