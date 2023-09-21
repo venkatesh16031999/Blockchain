@@ -12,6 +12,7 @@ All the security best practices may or may not be followed due to time constrain
 1. Perpetual Futures smart contract (USDT Market) - [Click Here](https://github.com/venkatesh16031999/Blockchain/tree/defi/perpetual-contract)
 2. Simple Decentralized Exchange Contract - [Click Here](https://github.com/venkatesh16031999/DEX-Contract-Eth-Scafold-2/tree/defi/dex-smart-contract)
 3. Token Vesting (Cliff and Linear) - [Click Here](https://github.com/venkatesh16031999/Blockchain/tree/defi/token-vesting)
+4. Staking Rewards (ERC20) - [Click Here](https://github.com/venkatesh16031999/Blockchain/tree/defi/staking-rewards)
 
 ### Governance:
 
