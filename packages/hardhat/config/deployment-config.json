@@ -1,0 +1,122 @@
+{
+    "polygon": {
+        "ERC20Token": {
+            "recipient": "",
+            "owner": "",
+            "amount": "1000000000",
+            "cap": "1000000000",
+            "layerZeroEndpoint": "",
+            "layerZeroChainId": 109,
+            "isBaseChain": true,
+            "tokenAddress": ""
+        },
+        "TokenFactory": {
+            "factoryContractAddress": ""
+        }
+    },
+    "ethereum": {
+        "ERC20Token": {
+            "recipient": "",
+            "owner": "",
+            "amount": "0",
+            "cap": "1000000000",
+            "layerZeroEndpoint": "",
+            "layerZeroChainId": 101,
+            "isBaseChain": false,
+            "tokenAddress": ""
+        },
+        "TokenFactory": {
+            "factoryContractAddress": ""
+        }
+    },
+    "avalanche": {
+        "ERC20Token": {
+            "recipient": "",
+            "owner": "",
+            "amount": "0",
+            "cap": "1000000000",
+            "layerZeroEndpoint": "",
+            "layerZeroChainId": 106,
+            "isBaseChain": false,
+            "tokenAddress": ""
+        },
+        "TokenFactory": {
+            "factoryContractAddress": ""
+        }
+    },
+    "mumbai": {
+        "ERC20Token": {
+            "recipient": "",
+            "owner": "",
+            "amount": "1000000000",
+            "cap": "1000000000",
+            "layerZeroEndpoint": "",
+            "layerZeroChainId": 10109,
+            "isBaseChain": true,
+            "tokenAddress": ""
+        },
+        "TokenFactory": {
+            "factoryContractAddress": ""
+        }
+    },
+    "goerli": {
+        "ERC20Token": {
+            "recipient": "",
+            "owner": "",
+            "amount": "0",
+            "cap": "1000000000",
+            "layerZeroEndpoint": "",
+            "layerZeroChainId": 10121,
+            "isBaseChain": false,
+            "tokenAddress": ""
+        },
+        "TokenFactory": {
+            "factoryContractAddress": ""
+        }
+    },
+    "sepolia": {
+        "ERC20Token": {
+            "recipient": "",
+            "owner": "",
+            "amount": "0",
+            "cap": "1000000000",
+            "layerZeroEndpoint": "",
+            "layerZeroChainId": 10161,
+            "isBaseChain": false,
+            "tokenAddress": ""
+        },
+        "TokenFactory": {
+            "factoryContractAddress": ""
+        }
+    },
+    "fuji": {
+        "ERC20Token": {
+            "recipient": "",
+            "owner": "",
+            "amount": "0",
+            "cap": "1000000000",
+            "layerZeroEndpoint": "",
+            "layerZeroChainId": 10106,
+            "isBaseChain": false,
+            "tokenAddress": ""
+        },
+        "TokenFactory": {
+            "factoryContractAddress": ""
+        }
+    },
+    "hardhat": {
+        "ERC20Token": {
+            "recipient": "",
+            "owner": "",
+            "amount": "1000000000",
+            "cap": "1000000000",
+            "layerZeroEndpoint": "",
+            "layerZeroChainId": 10109,
+            "isBaseChain": true,
+            "tokenAddress": ""
+        },
+        "TokenFactory": {
+            "factoryContractAddress": ""
+        }
+    }
+}

@@ -1,0 +1,152 @@
+{
+    "polygon": {
+        "skip": true,
+        "address": "",
+        "connectedChains": [
+            {
+                "name": "ethereum",
+                "lzChainId": 101,
+                "address": "",
+                "skip": false
+            },
+            {
+                "name": "avalanche",
+                "lzChainId": 106,
+                "address": "",
+                "skip": false
+            }
+        ]
+    },
+    "ethereum": {
+        "skip": true,
+        "address": "",
+        "connectedChains": [
+            {
+                "name": "avalanche",
+                "lzChainId": 106,
+                "address": "",
+                "skip": false
+            },
+            {
+                "name": "polygon",
+                "lzChainId": 109,
+                "address": "",
+                "skip": false
+            }
+        ]
+    },
+    "avalanche": {
+        "skip": true,
+        "address": "",
+        "connectedChains": [
+            {
+                "name": "ethereum",
+                "lzChainId": 101,
+                "address": "",
+                "skip": false
+            },
+            {
+                "name": "polygon",
+                "lzChainId": 109,
+                "address": "",
+                "skip": false
+            }
+        ]
+    },
+    "mumbai": {
+        "skip": false,
+        "address": "",
+        "connectedChains": [
+            {
+                "name": "goerli",
+                "lzChainId": 10121,
+                "address": "",
+                "skip": false
+            },
+            {
+                "name": "sepolia",
+                "lzChainId": 10161,
+                "address": "",
+                "skip": false
+            },
+            {
+                "name": "fuji",
+                "lzChainId": 10106,
+                "address": "",
+                "skip": true
+            }
+        ]
+    },
+    "goerli": {
+        "skip": false,
+        "address": "",
+        "connectedChains": [
+            {
+                "name": "mumbai",
+                "lzChainId": 10109,
+                "address": "",
+                "skip": false
+            },
+            {
+                "name": "sepolia",
+                "lzChainId": 10161,
+                "address": "",
+                "skip": false
+            },
+            {
+                "name": "fuji",
+                "lzChainId": 10106,
+                "address": "",
+                "skip": true
+            }
+        ]
+    },
+    "sepolia": {
+        "skip": false,
+        "address": "",
+        "connectedChains": [
+            {
+                "name": "goerli",
+                "lzChainId": 10121,
+                "address": "",
+                "skip": false
+            },
+            {
+                "name": "mumbai",
+                "lzChainId": 10109,
+                "address": "",
+                "skip": false
+            },
+            {
+                "name": "fuji",
+                "lzChainId": 10106,
+                "address": "",
+                "skip": true
+            }
+        ]
+    },
+    "fuji": {
+        "skip": true,
+        "address": "",
+        "connectedChains": [
+            {
+                "name": "goerli",
+                "lzChainId": 10121,
+                "address": "",
+                "skip": false
+            },
+            {
+                "name": "mumbai",
+                "lzChainId": 10109,
+                "address": "",
+                "skip": false
+            },
+            {
+                "name": "sepolia",
+                "lzChainId": 10161,
+                "address": "",
+                "skip": false
+            }
+        ]
+    }
+}
